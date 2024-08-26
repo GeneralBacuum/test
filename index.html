@@ -8,5 +8,14 @@
 <body>
     <h1>Hello, World!</h1>
     <p>This is my first GitHub Pages site.</p>
+    <p>The current value is: <span id="current-value"></span></p>
+    <script>
+        // Fetch the current value from a JSON file
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('current-value').textContent = data.value;
+            });
+    </script>
 </body>
 </html>
